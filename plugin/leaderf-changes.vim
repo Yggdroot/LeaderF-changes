@@ -25,3 +25,7 @@ let g:Lf_Extensions.changes = {
             \         "hi link Lf_hl_ChangesText Directory",
             \ ],
             \ }
+
+command! -bar -nargs=0 LeaderfChanges Leaderf changes 
+let g:Lf_SelfContent = get(g:,'Lf_SelfContent', {})
+let g:Lf_SelfContent['LeaderfChanges'] = "vim change list"
