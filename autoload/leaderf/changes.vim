@@ -2,8 +2,11 @@
 
 function! leaderf#changes#source(args) abort
     let changes = split(execute('changes'), "\n")
-    "let result = reverse(changes[1:])
-    return [changes[0]] + changes[1:]
+    let result = reverse(changes[1:])
+    if result[0] == '>'
+        let result = result[1:]
+    endif
+    return [changes[0]] + result
 endfunction
 
 function! leaderf#changes#accept(line, args) abort
